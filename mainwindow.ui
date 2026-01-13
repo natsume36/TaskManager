@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>个人工作与任务管理系统</string>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="contentsMargins">
+     <set>10</set>
+     <set>10</set>
+     <set>10</set>
+     <set>10</set>
+    </property>
+    <property name="spacing">
+     <number>8</number>
+    </property>
+    <!-- 筛选区容器 -->
+    <item>
+     <widget class="QWidget" name="filterWidget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="contentsMargins">
+        <set>0</set>
+        <set>0</set>
+        <set>0</set>
+        <set>0</set>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <!-- 优先级筛选 -->
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>优先级：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="cmbPriority">
+         <item>
+          <property name="text">
+           <string>全部优先级</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>低优先级</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>中优先级</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>高优先级</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <!-- 分类筛选 -->
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>分类：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="cmbCategory">
+         <item>
+          <property name="text">
+           <string>全部分类</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <!-- 完成状态筛选 -->
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>完成状态：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="cmbCompleted">
+         <item>
+          <property name="text">
+           <string>全部状态</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>未完成</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>已完成</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <!-- 搜索功能 -->
+       <item>
+        <widget class="QLabel" name="labelSearch">
+         <property name="text">
+          <string>搜索：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="leSearch">
+         <property name="placeholderText">
+          <string>按标题或描述搜索...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSearch">
+         <property name="text">
+          <string>搜索</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <!-- 重置筛选按钮 -->
+       <item>
+        <widget class="QPushButton" name="btnResetFilter">
+         <property name="text">
+          <string>重置筛选</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <!-- 任务列表 -->
+    <item>
+     <widget class="QTableView" name="tableView">
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <!-- 工具栏 -->
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <action name="actAdd">
+    <property name="icon">
+     <iconset theme="list-add"/>
+    </property>
+    <property name="text">
+     <string>添加任务</string>
+    </property>
+   </action>
+   <action name="actEdit">
+    <property name="icon">
+     <iconset theme="document-edit"/>
+    </property>
+    <property name="text">
+     <string>编辑任务</string>
+    </property>
+   </action>
+   <action name="actDelete">
+    <property name="icon">
+     <iconset theme="list-remove"/>
+    </property>
+    <property name="text">
+     <string>删除任务</string>
+    </property>
+   </action>
+   <action name="actMark">
+    <property name="icon">
+     <iconset theme="task-complete"/>
+    </property>
+    <property name="text">
+     <string>标记完成</string>
+    </property>
+   </action>
+   <action name="actExport">
+    <property name="icon">
+     <iconset theme="document-export"/>
+    </property>
+    <property name="text">
+     <string>导出报表</string>
+    </property>
+   </action>
+   <addaction name="actAdd"/>
+   <addaction name="actEdit"/>
+   <addaction name="actDelete"/>
+   <addaction name="actMark"/>
+   <addaction name="separator"/>
+   <addaction name="actExport"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
