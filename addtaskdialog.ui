@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddTaskDialog</class>
+ <widget class="QDialog" name="AddTaskDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>添加/编辑任务</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <property name="minimumWidth">
+   <number>400</number>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="contentsMargins">
+    <set>20</set>
+    <set>20</set>
+    <set>20</set>
+    <set>20</set>
+   </property>
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <!-- 任务标题 -->
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>任务标题 *</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="edtTitle">
+     <property name="placeholderText">
+      <string>请输入任务标题（必填）</string>
+     </property>
+    </widget>
+   </item>
+   <!-- 任务描述 -->
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>任务描述</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QTextEdit" name="edtDescription">
+     <property name="placeholderText">
+      <string>请输入任务描述（可选）</string>
+     </property>
+     <property name="maximumHeight">
+      <number>80</number>
+     </property>
+    </widget>
+   </item>
+   <!-- 截止时间 -->
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>截止时间 *</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QDateTimeEdit" name="dtDeadline">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+     <property name="displayFormat">
+      <string>yyyy-MM-dd HH:mm</string>
+     </property>
+    </widget>
+   </item>
+   <!-- 优先级 -->
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>优先级 *</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="cmbPriority">
+     <item>
+      <property name="text">
+       <string>低优先级</string>
+      </property>
+      <property name="data">
+       <number>1</number>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>中优先级</string>
+      </property>
+      <property name="data">
+       <number>2</number>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>高优先级</string>
+      </property>
+      <property name="data">
+       <number>3</number>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <!-- 分类 -->
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>分类 *</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="cmbCategory">
+     <item>
+      <property name="text">
+       <string>工作</string>
+      </property>
+      <property name="data">
+       <number>1</number>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>学习</string>
+      </property>
+      <property name="data">
+       <number>2</number>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>生活</string>
+      </property>
+      <property name="data">
+       <number>3</number>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <!-- 按钮区 -->
+   <item row="5" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnOk">
+       <property name="text">
+        <string>确认</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancel">
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>AddTaskDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
